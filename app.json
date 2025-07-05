@@ -1,0 +1,44 @@
+{
+    "expo": {
+      "name": "Gamezy",
+      "slug": "gamezy",
+      "version": "1.0.0",
+      "orientation": "portrait",
+      "icon": "./assets/icon.png",
+      "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+      "splash": {
+        "image": "./assets/splash-icon.png",
+        "resizeMode": "contain",
+        "backgroundColor": "#C0C0C0"
+      },
+      "ios": {
+        "supportsTablet": false,
+        "bundleIdentifier": "com.seanaze.gamezy",
+        "usesAppleSignIn": true,
+        "config": {
+          "usesNonExemptEncryption": false
+        }
+      },
+      "android": {
+        "adaptiveIcon": {
+          "foregroundImage": "./assets/adaptive-icon.png",
+          "backgroundColor": "#C0C0C0"
+        },
+        "package": "com.seanaze.gamezy",
+        "edgeToEdgeEnabled": true
+      },
+      "web": {
+        "favicon": "./assets/favicon.png"
+      },
+      "plugins": [
+        "expo-apple-authentication",
+        [
+          "expo-camera",
+          {
+            "cameraPermission": "Allow Gamezy to access your camera "
+          }
+        ]
+      ]
+    }
+  }
