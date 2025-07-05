@@ -78,6 +78,18 @@ Section Role: Media persistence service
 Interactions: Used by profile photo and dual photo features
 Example: Supabase Storage Upload - bucket management, URL generation
 
+@01-UT-01A_ProfileValidation.ts
+Purpose: Validation utilities specific to profile creation and editing
+Section Role: Profile data validation
+Interactions: Used by wizard steps and profile API
+Example: Username validation, age verification, bio length checks
+
+@01-TE-01A_AuthProvider.test.tsx
+Purpose: Unit tests for authentication context provider
+Section Role: Testing authentication flow
+Interactions: Tests user session management and auth state
+Example: Jest/React Testing Library - context provider testing
+
 
 
 

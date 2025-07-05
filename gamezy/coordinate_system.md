@@ -6,7 +6,7 @@ Codebase Navigation System
 `<Feature>-<Layer>-<Index>_<Name>.<ext>`
 
 - **Feature** (01-07): Major app section
-- **Layer** (UI/SV/AI/DB/NV): Execution environment  
+- **Layer** (UI/SV/AI/DB/NV/UT/TY/TE/MW): Execution environment  
 - **Index** (01-99): Sequential within feature+layer
 - **Name**: PascalCase description
 
@@ -43,13 +43,28 @@ Trace complete user flows across features
 
 | From | → Can Call | ❌ Cannot Call |
 |------|------------|----------------|
-| UI   | UI, SV     | AI, DB         |
-| SV   | SV, AI, DB | -              |
-| AI   | DB only    | UI, SV         |
-| DB   | -          | Everything     |
-| NV   | UI only    | SV, AI, DB     |
+| UI   | UI, SV, UT, TY | AI, DB, MW, TE |
+| SV   | SV, AI, DB, UT, TY, MW | UI, TE |
+| AI   | DB, UT, TY | UI, SV, MW, TE |
+| DB   | UT, TY     | Everything else |
+| NV   | UI, UT, TY | SV, AI, DB, MW, TE |
+| UT   | TY         | Everything else |
+| TY   | -          | Everything     |
+| TE   | Everything | -              |
+| MW   | SV, UT, TY | UI, AI, DB, NV, TE |
 
 **AI Layer Note**: AI processes data and returns results via database updates or completion flags. SV polls/checks these results rather than AI calling back.
+
+**Layer Types**:
+- **UI** (User Interface): React components, screens, modals, visual elements
+- **SV** (Service): API calls, business logic, data management, backend integration
+- **AI** (Artificial Intelligence): ML models, AI processing, content analysis, embeddings
+- **DB** (Database): Schema, migrations, direct database operations, table definitions
+- **NV** (Navigation): React Navigation, routing logic, screen transitions
+- **UT** (Utils): Cross-cutting utilities, validation, formatting, helpers
+- **TY** (Types): TypeScript definitions, interfaces, enums, type safety
+- **TE** (Tests): Unit tests, integration tests, test utilities, test coverage
+- **MW** (Middleware): API interceptors, request/response transformers, cross-cutting concerns
 
 ## Framework Files (Edit Directly)
 

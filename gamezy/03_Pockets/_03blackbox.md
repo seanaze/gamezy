@@ -47,3 +47,15 @@ Purpose: Database tables for games, tiers, and membership
 Section Role: Pocket system data model
 Interactions: Defines foreign keys, indices, tier thresholds
 Example: Supabase schema example with RLS policies
+
+@03-TY-01A_PocketTypes.d.ts
+Purpose: TypeScript definitions for pocket system entities
+Section Role: Type safety for pocket data
+Interactions: Used by all pocket-related components and services
+Example: Game, Tier, Membership interfaces and enums
+
+@03-TE-01A_GameExplorer.test.tsx
+Purpose: Unit tests for game explorer component
+Section Role: Testing game discovery and selection
+Interactions: Tests game grid rendering, search functionality
+Example: React Testing Library - list component testing

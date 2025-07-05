@@ -41,3 +41,15 @@ Purpose: Update user's game stats and pocket tier after verified post
 Section Role: Progression system
 Interactions: Increments counters; may send "level up" notification
 Example: Duolingo streak counter - immediate feedback on progress
+
+@04-UT-01A_ImageProcessing.ts
+Purpose: Image utilities for resizing, compression, format conversion
+Section Role: Media processing helpers
+Interactions: Used by camera view and photo uploader
+Example: Image manipulation utilities - resize, compress, crop
+
+@04-TE-01A_DualCameraView.test.tsx
+Purpose: Unit tests for dual camera interface
+Section Role: Testing camera functionality and capture flow
+Interactions: Tests camera permissions, photo capture, review flow
+Example: React Testing Library - camera component testing

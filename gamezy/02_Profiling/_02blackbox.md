@@ -42,3 +42,9 @@ Section Role: Content management service
 Interactions: Queries posts table; triggers 04-AI-03_PocketTrigger on new posts
 Example: Instagram's infinite scroll API - cursor-based pagination
 
+@02-TE-01A_ProfileHomeScreen.test.tsx
+Purpose: Unit tests for profile home screen component
+Section Role: Testing profile display and navigation
+Interactions: Tests data loading, carousel interaction, timeline display
+Example: React Testing Library - component integration testing
+

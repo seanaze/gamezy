@@ -35,3 +35,9 @@ Purpose: Send push notifications for new messages
 Section Role: Offline user engagement
 Interactions: Uses Expo Push API when user not in app
 Example: Expo push notification service - token management
+
+@05-TE-01A_ConversationScreen.test.tsx
+Purpose: Unit tests for conversation screen component
+Section Role: Testing chat interface and real-time messaging
+Interactions: Tests message sending, receiving, UI updates
+Example: React Testing Library - real-time component testing

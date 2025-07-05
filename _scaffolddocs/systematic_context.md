@@ -94,6 +94,20 @@ Section Role: Media persistence service
 Interactions: Used by profile photo and dual photo features
 Example: Supabase Storage Upload - bucket management, URL generation
 
+01-UT-01A_ProfileValidation.ts
+
+Purpose: Validation utilities specific to profile creation and editing
+Section Role: Profile data validation
+Interactions: Used by wizard steps and profile API
+Example: Username validation, age verification, bio length checks
+
+01-TE-01A_AuthProvider.test.tsx
+
+Purpose: Unit tests for authentication context provider
+Section Role: Testing authentication flow
+Interactions: Tests user session management and auth state
+Example: Jest/React Testing Library - context provider testing
+
 02_Profile Feature
 02-UI-01A_ProfileHomeScreen.tsx
 
@@ -143,6 +157,13 @@ Purpose: CRUD for user's posts with pagination
 Section Role: Content management service
 Interactions: Queries posts table; triggers 04-AI-03_PocketTrigger on new posts
 Example: Instagram's infinite scroll API - cursor-based pagination
+
+02-TE-01A_ProfileHomeScreen.test.tsx
+
+Purpose: Unit tests for profile home screen component
+Section Role: Testing profile display and navigation
+Interactions: Tests data loading, carousel interaction, timeline display
+Example: React Testing Library - component integration testing
 
 03_Pockets Feature
 03-UI-01A_GameExplorer.tsx
@@ -201,6 +222,20 @@ Section Role: Pocket system data model
 Interactions: Defines foreign keys, indices, tier thresholds
 Example: Supabase schema example with RLS policies
 
+03-TY-01A_PocketTypes.d.ts
+
+Purpose: TypeScript definitions for pocket system entities
+Section Role: Type safety for pocket data
+Interactions: Used by all pocket-related components and services
+Example: Game, Tier, Membership interfaces and enums
+
+03-TE-01A_GameExplorer.test.tsx
+
+Purpose: Unit tests for game explorer component
+Section Role: Testing game discovery and selection
+Interactions: Tests game grid rendering, search functionality
+Example: React Testing Library - list component testing
+
 04_CaptureModeration Feature
 04-UI-01A_DualCameraView.tsx
 
@@ -251,6 +286,20 @@ Section Role: Progression system
 Interactions: Increments counters; may send "level up" notification
 Example: Duolingo streak counter - immediate feedback on progress
 
+04-UT-01A_ImageProcessing.ts
+
+Purpose: Image utilities for resizing, compression, format conversion
+Section Role: Media processing helpers
+Interactions: Used by camera view and photo uploader
+Example: Image manipulation utilities - resize, compress, crop
+
+04-TE-01A_DualCameraView.test.tsx
+
+Purpose: Unit tests for dual camera interface
+Section Role: Testing camera functionality and capture flow
+Interactions: Tests camera permissions, photo capture, review flow
+Example: React Testing Library - camera component testing
+
 05_Chat Feature
 05-UI-01A_ChatListScreen.tsx
 
@@ -293,6 +342,13 @@ Purpose: Send push notifications for new messages
 Section Role: Offline user engagement
 Interactions: Uses Expo Push API when user not in app
 Example: Expo push notification service - token management
+
+05-TE-01A_ConversationScreen.test.tsx
+
+Purpose: Unit tests for conversation screen component
+Section Role: Testing chat interface and real-time messaging
+Interactions: Tests message sending, receiving, UI updates
+Example: React Testing Library - real-time component testing
 
 06_Matchmaking Feature
 06-AI-01A_UserEmbeddings.ts
@@ -351,3 +407,45 @@ Purpose: Environment variables and app constants
 Section Role: Configuration management
 Interactions: Imported for API keys, URLs
 Example: React Native Config - .env management
+
+07-UT-01A_ValidationUtils.ts
+
+Purpose: Cross-cutting validation utilities and form validators
+Section Role: Shared validation logic
+Interactions: Used by all forms and input validation
+Example: Email validation, password strength, phone number formats
+
+07-UT-02A_DateUtils.ts
+
+Purpose: Date formatting, parsing, and manipulation utilities
+Section Role: Shared date/time operations
+Interactions: Used for birthday, timestamps, relative dates
+Example: Date formatting, time ago, timezone handling
+
+07-TY-01A_EnvTypes.d.ts
+
+Purpose: Environment variable type definitions
+Section Role: Type safety for configuration
+Interactions: Used by config files and environment access
+Example: Process.env typings, API endpoint types
+
+07-TY-02A_DatabaseTypes.d.ts
+
+Purpose: Database schema type definitions
+Section Role: Type safety for database operations
+Interactions: Used by all service files and database queries
+Example: Supabase generated types, table schemas
+
+07-MW-01A_ApiInterceptors.ts
+
+Purpose: API request/response interceptors and middleware
+Section Role: Cross-cutting API concerns
+Interactions: Used by all service files for auth, logging, error handling
+Example: Auth token injection, request logging, error transformation
+
+07-TE-01A_SharedComponents.test.tsx
+
+Purpose: Unit tests for shared UI components
+Section Role: Testing reusable component library
+Interactions: Tests Avatar, Button, Card components
+Example: React Testing Library - component library testing
