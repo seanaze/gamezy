@@ -1,4 +1,3 @@
-
 .env
 .env.local
 .env.development.local
@@ -9,4 +8,17 @@
 .env.production
 node_modules
 .expo
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Google Cloud credentials
+gamezy/07_shared/credentials/
+*.json
 

@@ -12,10 +12,10 @@ Example: Supabase React Native Auth Context - provides useAuth() hook pattern
 
 01-UI-02A_SocialLoginButtons.tsx
 
-Purpose: Reusable component rendering "Sign in with Apple" and "Sign in with Google" buttons
-Section Role: Visual auth triggers for WelcomeScreen
+Purpose: Reusable component rendering "Sign in with Google" button
+Section Role: Visual auth trigger for WelcomeScreen
 Interactions: Calls Expo AuthSession → passes tokens to 01-SV-01_AuthWebhook
-Example: Expo Apple Authentication Button combined with branded button styling from Kippo's login screen
+Example: Google OAuth Button with branded button styling from Kippo's login screen
 
 01-UI-03A_WelcomeScreen.tsx
 
@@ -75,10 +75,10 @@ Example: TikTok's "You're all set!" screen with confetti animation
 
 01-SV-01A_AuthWebhook.ts
 
-Purpose: Validates OAuth tokens from Apple/Google, creates Supabase session
+Purpose: Validates OAuth tokens from Google, creates Supabase session
 Section Role: Server-side auth handler
 Interactions: Receives tokens from 01-UI-02; creates user record in DB
-Example: Supabase Edge Function for Apple Sign In - token exchange pattern
+Example: Supabase Edge Function for Google Sign In - token exchange pattern
 
 01-SV-02A_UserProfileAPI.ts
 

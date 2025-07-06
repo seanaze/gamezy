@@ -7,16 +7,16 @@ Interactions: Consumed by all protected screens; initializes Supabase client
 Example: Supabase React Native Auth Context - provides useAuth() hook pattern (elaborate)
 
 @01-UI-02A_SocialLoginButtons.tsx
-Purpose: Reusable component rendering "Sign in with Apple" and "Sign in with Google" buttons
-Section Role: Visual auth triggers for WelcomeScreen
+Purpose: Reusable component rendering "Sign in with Google" button
+Section Role: Visual auth trigger for WelcomeScreen
 Interactions: Calls Expo AuthSession → passes tokens to 01-SV-01_AuthWebhook
-Example: Expo Apple Authentication Button combined with branded button styling from Kippo's login screen
+Example: Google OAuth Button with branded button styling from Kippo's login screen
 
 @01-UI-03A_WelcomeScreen.tsx
-Purpose: Initial app screen with logo, tagline, and social login buttons
+Purpose: Initial app screen with logo, tagline, and Google login button
 Section Role: Entry point for new/logged-out users
 Interactions: Renders 01-UI-02_SocialLoginButtons; navigates to 01-UI-04_ProfileWizardPager on first login
-Example: Kippo's welcome screen - dark background, centered logo, OAuth buttons at bottom
+Example: Kippo's welcome screen - dark background, centered logo, OAuth button at bottom
 
 @01-UI-04A_ProfileWizardPager.tsx
 Purpose: Container managing 6-step profile creation flow with progress indicator
@@ -61,10 +61,10 @@ Interactions: Triggers navigation to main app (02-UI-01_ProfileHomeScreen)
 Example: TikTok's "You're all set!" screen with confetti animation
 
 @01-SV-01A_AuthWebhook.ts
-Purpose: Validates OAuth tokens from Apple/Google, creates Supabase session
+Purpose: Validates OAuth tokens from Google, creates Supabase session
 Section Role: Server-side auth handler
 Interactions: Receives tokens from 01-UI-02; creates user record in DB
-Example: Supabase Edge Function for Apple Sign In - token exchange pattern
+Example: Supabase Edge Function for Google Sign In - token exchange pattern
 
 @01-SV-02A_UserProfileAPI.ts
 Purpose: CRUD operations for user profiles (create, check username, update)

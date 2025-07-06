@@ -1,53 +1,52 @@
 {
-    "expo": {
-      "name": "Gamezy",
-      "slug": "gamezy",
-      "version": "1.0.0",
-      "orientation": "portrait",
-      "icon": "./assets/icon.png",
-      "userInterfaceStyle": "automatic",
+  "expo": {
+    "name": "Gamezy",
+    "slug": "gamezy",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
-      "splash": {
-        "image": "./assets/splash-icon.png",
-        "resizeMode": "contain",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#C0C0C0"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.seanaze.gamezy",
+      "config": {
+        "usesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#C0C0C0"
       },
-      "ios": {
-        "supportsTablet": false,
-        "bundleIdentifier": "com.seanaze.gamezy",
-        "usesAppleSignIn": true,
-        "config": {
-          "usesNonExemptEncryption": false
-        }
-      },
-      "android": {
-        "adaptiveIcon": {
-          "foregroundImage": "./assets/adaptive-icon.png",
-          "backgroundColor": "#C0C0C0"
-        },
-        "package": "com.seanaze.gamezy",
-        "edgeToEdgeEnabled": true
-      },
-      "web": {
-        "favicon": "./assets/favicon.png"
-      },
-      "plugins": [
-        "expo-apple-authentication",
-        [
-          "expo-camera",
-          {
-            "cameraPermission": "Allow Gamezy to access your camera "
-          }],
-        [
-          "expo-camera",
-          {
-            "cameraPermission": "Allow Gamezy to access your camera "
-          }],
-        "expo-notifications",
-        "expo-image-picker",
-        "expo-media-library",
-        ["expo-build-properties", {"ios": {"newArchEnabled": true}, "android": {"newArchEnabled": true}}]
+      "package": "com.seanaze.gamezy",
+      "edgeToEdgeEnabled": true,
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
       ]
-    }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow Gamezy to access your camera "
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "1a0aba31-c690-442c-bcd4-cdab4a96af86"
+      }
+    },
+    "owner": "seanaze"
   }
-
+}
