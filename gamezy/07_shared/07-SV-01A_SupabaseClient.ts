@@ -1,17 +1,38 @@
-//  I still need descriptions here of what this file does here, and in every folder I should have a directory that maps real examples of what specific file is mean to do!
+/**
+ * @fileoverview Supabase client configuration
+ * @description Centralized Supabase client setup with authentication and type safety
+ */
 
 import { createClient } from '@supabase/supabase-js'
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import { Config, DevUtils } from './07-SV-02A_Config'
+import type { Database } from './07-TY-02A_DatabaseTypes'
 
-const supabaseUrl = process.env.PUBLIC_SUPABASE_URL || 'https://zcczafkypwtngpnylpcu.supabase.co'
-const supabaseAnonKey = process.env.PUBLIC_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpjY3phZmt5cHd0bmdwbnlscGN1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE3MTcwNDksImV4cCI6MjA2NzI5MzA0OX0.bAxqjfhsol-93QnAHyOC_0eOD_P02FyQuEEGFnk8cy8'
+// Type-safe Supabase client with proper configuration
+export const supabase = createClient<Database>(
+  Config.SUPABASE_URL,
+  Config.SUPABASE_ANON_KEY,
+  {
+    auth: {
+      storage: AsyncStorage,
+      autoRefreshToken: true,
+      persistSession: true,
+      detectSessionInUrl: false, // Disable for React Native
+    },
+    global: {
+      headers: {
+        'X-Client-Info': 'gamezy-mobile',
+        'X-Environment': Config.ENVIRONMENT,
+      },
+    },
+  }
+)
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
-  auth: {
-    storage: AsyncStorage,
-    autoRefreshToken: true,
-    persistSession: true,
-    detectSessionInUrl: false,
-  },
-})
+// Initialize client with debugging if enabled
+if (Config.DEBUG_MODE) {
+  DevUtils.log('Supabase client initialized', {
+    url: Config.SUPABASE_URL,
+    environment: Config.ENVIRONMENT,
+  })
+}
 

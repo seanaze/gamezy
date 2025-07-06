@@ -76,6 +76,8 @@ These live outside the coordinate system:
 | `package.json` | Add/remove dependencies |
 | `.env.local` | API keys, Supabase URLs |
 | `tsconfig.json` | TypeScript settings |
+| `babel.config.js` | Babel compilation configuration |
+| `metro.config.js` | Metro bundler configuration |
 | `App.tsx` | Root component, provider setup |
 | `assets/*` | Images, game covers, icons |
 

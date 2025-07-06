@@ -449,3 +449,40 @@ Purpose: Unit tests for shared UI components
 Section Role: Testing reusable component library
 Interactions: Tests Avatar, Button, Card components
 Example: React Testing Library - component library testing
+
+## Framework Files (Outside Coordinate System)
+
+babel.config.js
+
+Purpose: Babel compilation configuration for Expo React Native
+Section Role: JavaScript/TypeScript transformation and optimization
+Interactions: Transforms JSX, TypeScript, and modern JS features for React Native
+Example: Expo Babel preset with NativeWind, Reanimated, and production optimizations
+
+metro.config.js
+
+Purpose: Metro bundler configuration for module resolution and performance
+Section Role: Asset bundling and module resolution
+Interactions: Provides path aliases (@gamezy, @shared, @config) and file extension support
+Example: Metro config with aliases for AI-friendly imports and development optimization
+
+App.tsx
+
+Purpose: Root application component with provider setup
+Section Role: Application entry point and context initialization  
+Interactions: Wraps entire app with QueryClient, SafeArea, and Navigation providers
+Example: React Native root component with proper provider hierarchy
+
+app.json
+
+Purpose: Expo application configuration and environment variable substitution
+Section Role: App metadata and build configuration
+Interactions: Defines app icon, splash screen, and environment variable mapping
+Example: Expo config with EAS project ID and environment variable substitution
+
+tsconfig.json
+
+Purpose: TypeScript compiler configuration with strict settings
+Section Role: Type checking and compilation rules
+Interactions: Enables strict mode, path aliases, and modern TypeScript features
+Example: Strict TypeScript config optimized for React Native and AI development

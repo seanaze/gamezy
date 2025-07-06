@@ -45,7 +45,12 @@
     "extra": {
       "eas": {
         "projectId": "1a0aba31-c690-442c-bcd4-cdab4a96af86"
-      }
+      },
+      "SUPABASE_URL": "${EXPO_PUBLIC_SUPABASE_URL}",
+      "SUPABASE_ANON_KEY": "${EXPO_PUBLIC_SUPABASE_ANON_KEY}",
+      "ENVIRONMENT": "${ENVIRONMENT}",
+      "DEBUG_MODE": "${DEBUG_MODE}",
+      "API_BASE_URL": "${API_BASE_URL}"
     },
     "owner": "seanaze"
   }
